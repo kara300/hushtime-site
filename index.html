@@ -1,39 +1,763 @@
 <!doctype html>
 <html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hush time</title>
-<meta name="description" content="쉼이 필요한 시간, hush time. ASMR과 편안한 음악을 겹쳐 듣는 힐링 앱.">
-<style>
-  :root { --bg:#0e1a33; --fg:#f2f4f8; --muted:#a9b4cc; --line:#24365c; --accent:#7fb0ff; }
-  @media (prefers-color-scheme: light) {
-    :root { --bg:#f5f7fb; --fg:#14213d; --muted:#5b6784; --line:#dbe2f0; --accent:#1a5fd1; }
-  }
-  body { margin:0; background:var(--bg); color:var(--fg);
-         font:16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
-  main { max-width:640px; margin:0 auto; padding:72px 20px 64px; text-align:center; }
-  h1 { font-size:2.2rem; margin:0 0 8px; letter-spacing:-.02em; }
-  .tagline { font-size:1.15rem; margin:0 0 28px; }
-  p { margin:10px 0; }
-  .muted { color:var(--muted); }
-  a { color:var(--accent); }
-  nav { margin-top:40px; padding-top:24px; border-top:1px solid var(--line); }
-  nav a { margin:0 10px; }
-</style>
-</head>
-<body>
-<main>
-  <h1>hush time</h1>
-  <p class="tagline">쉼이 필요한 시간, hush time<br><span class="muted">A time to rest, hush time</span></p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>hush time</title>
+    <meta name="description" content="쉼이 필요한 시간, hush time. ASMR과 편안한 음악을 겹쳐 듣는 힐링 앱." />
+    <meta property="og:title" content="hush time" />
+    <meta property="og:description" content="쉼이 필요한 시간, hush time. ASMR과 편안한 음악을 겹쳐 듣는 힐링 앱." />
+    <meta property="og:image" content="https://hushtime.doozogak.com/img/icon.png" />
+    <link rel="icon" href="/img/icon.png" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <style>
+      :root {
+        --bg: #0e1a33;
+        --bg2: #14264a;
+        --card: #17294d;
+        --fg: #f2f4f8;
+        --muted: #a9b4cc;
+        --line: #24365c;
+        --accent: #7fb0ff;
+        --accent-fg: #0e1a33;
+        --asmr: #ffa64d;
+        --calm: #7fd0ff;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f5f7fb;
+          --bg2: #e9eef8;
+          --card: #ffffff;
+          --fg: #14213d;
+          --muted: #5b6784;
+          --line: #dbe2f0;
+          --accent: #1a5fd1;
+          --accent-fg: #ffffff;
+          --asmr: #c2680a;
+          --calm: #0a78b5;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.7 -apple-system,
+          BlinkMacSystemFont,
+          "Apple SD Gothic Neo",
+          "Hiragino Sans",
+          "PingFang SC",
+          "Noto Sans KR",
+          "Noto Sans JP",
+          "Noto Sans SC",
+          sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      a {
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .muted {
+        color: var(--muted);
+      }
 
-  <p>ASMR과 편안한 음악을 겹쳐 들으며 쉬는 힐링 앱입니다.</p>
-  <p class="muted">A relaxing app that lets you layer ASMR with calming music.</p>
+      /* 상단 언어 전환 */
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 16px;
+      }
+      .langs {
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--card);
+      }
+      .langs button {
+        border: 0;
+        background: none;
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.85rem;
+        padding: 4px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .langs button[aria-pressed="true"] {
+        background: var(--accent);
+        color: var(--accent-fg);
+        font-weight: 600;
+      }
 
-  <nav>
-    <a href="/privacy/">개인정보처리방침 · Privacy Policy</a><br>
-    <p>문의 · Contact: <a href="mailto:doozogak@gmail.com">doozogak@gmail.com</a></p>
-  </nav>
-</main>
-</body>
+      /* 히어로 */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+        padding: 40px 0 72px;
+      }
+      .hero .icon {
+        width: 88px;
+        height: 88px;
+        border-radius: 20px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+      }
+      h1 {
+        font-size: 2.8rem;
+        line-height: 1.15;
+        margin: 20px 0 8px;
+        letter-spacing: -0.02em;
+      }
+      .tagline {
+        font-size: 1.3rem;
+        margin: 0 0 16px;
+      }
+      .lead {
+        color: var(--muted);
+        margin: 0 0 28px;
+      }
+      .stores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 180px;
+        padding: 10px 22px;
+        border-radius: 14px;
+        background: var(--fg);
+        color: var(--bg);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      .btn small {
+        font-size: 0.72rem;
+        opacity: 0.75;
+      }
+      .btn strong {
+        font-size: 1.15rem;
+      }
+      .btn[aria-disabled="true"] {
+        opacity: 0.55;
+        pointer-events: none;
+      }
+      .hero-shot {
+        display: flex;
+        justify-content: center;
+      }
+      .phone {
+        width: 100%;
+        max-width: 280px;
+        border-radius: 32px;
+        border: 6px solid #05080f;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        display: block;
+      }
+
+      /* 섹션 공통 */
+      section {
+        padding: 56px 0;
+        border-top: 1px solid var(--line);
+      }
+      h2 {
+        font-size: 1.7rem;
+        margin: 0 0 8px;
+        letter-spacing: -0.01em;
+      }
+      .sub {
+        color: var(--muted);
+        margin: 0 0 32px;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+      .features {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+      }
+      .card h3 {
+        font-size: 1.05rem;
+        margin: 0 0 6px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .card .emoji {
+        font-size: 1.6rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .tag-asmr {
+        color: var(--asmr);
+        font-weight: 700;
+      }
+      .tag-calm {
+        color: var(--calm);
+        font-weight: 700;
+      }
+
+      /* 사용법 */
+      .steps {
+        counter-reset: step;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+      .steps li {
+        counter-increment: step;
+        position: relative;
+        padding: 16px 18px 16px 62px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+      .steps li::before {
+        content: counter(step);
+        position: absolute;
+        left: 18px;
+        top: 16px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--accent-fg);
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+      }
+      .steps b {
+        display: block;
+        margin-bottom: 2px;
+      }
+      .steps span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* 스크린샷 */
+      .shots {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 4px 4px 16px;
+        scroll-snap-type: x mandatory;
+      }
+      .shots figure {
+        margin: 0;
+        flex: 0 0 auto;
+        width: 210px;
+        scroll-snap-align: start;
+      }
+      .shots img {
+        width: 100%;
+        border-radius: 24px;
+        border: 4px solid #05080f;
+        display: block;
+      }
+      .shots figcaption {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .notes {
+        margin: 0;
+        padding-left: 1.2em;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .notes li {
+        margin: 6px 0;
+      }
+
+      .cta {
+        text-align: center;
+      }
+      .cta .stores {
+        justify-content: center;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0 56px;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      footer a {
+        margin: 0 8px;
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding-bottom: 48px;
+        }
+        .hero .icon {
+          margin: 0 auto;
+        }
+        .stores {
+          justify-content: center;
+        }
+        h1 {
+          font-size: 2.3rem;
+        }
+        section {
+          padding: 44px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="langs" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ko">한국어</button>
+          <button type="button" data-set-lang="en">English</button>
+          <button type="button" data-set-lang="ja">日本語</button>
+          <button type="button" data-set-lang="zh">简体中文</button>
+        </div>
+      </div>
+
+      <header class="hero">
+        <div>
+          <img class="icon" src="/img/icon.png" alt="hush time" width="88" height="88" />
+          <h1>hush time</h1>
+          <p class="tagline" data-i18n="tagline">쉼이 필요한 시간, hush time</p>
+          <p class="lead" data-i18n="lead">
+            ASMR 하나와 편안한 음악 하나를 동시에 틀어, 나만의 조합으로 겹쳐 듣는 힐링 앱입니다.
+          </p>
+          <div class="stores">
+            <a class="btn" id="btn-ios" href="#">
+              <small data-i18n="dl_on">다운로드</small>
+              <strong>App Store</strong>
+            </a>
+            <a class="btn" id="btn-android" href="#">
+              <small data-i18n="dl_on">다운로드</small>
+              <strong>Google Play</strong>
+            </a>
+          </div>
+        </div>
+        <div class="hero-shot">
+          <img class="phone" data-shot="home" src="/img/home-ko.jpg" alt="hush time" />
+        </div>
+      </header>
+
+      <section id="about">
+        <h2 data-i18n="about_h">이런 앱이에요</h2>
+        <p class="sub" data-i18n="about_sub">
+          빗소리 위에 재즈 피아노를, 파도 소리 위에 로파이를. 두 영상을 취향대로 골라 겹쳐 보세요.
+        </p>
+        <div class="grid features">
+          <div class="card">
+            <span class="emoji">🎧</span>
+            <h3 data-i18n="f1_t">두 영상 동시 재생</h3>
+            <p data-i18n="f1_d"><span class="tag-asmr">ASMR</span> 1개와 <span class="tag-calm">CALM</span> 1개를 한 화면에서 함께 재생해요.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">🌧️</span>
+            <h3 data-i18n="f3_t">테마별 채널 모음</h3>
+            <p data-i18n="f3_d">빗소리, 숲, 재즈, 클래식 등 테마별 채널을 모아 두었고 ★로 즐겨찾기를 할 수 있어요.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">📚</span>
+            <h3 data-i18n="f4_t">나만의 보관함</h3>
+            <p data-i18n="f4_d">마음에 드는 영상을 보관함에 모으고, 유튜브 공유 메뉴에서 바로 저장할 수 있어요.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">😴</span>
+            <h3 data-i18n="f5_t">취침 타이머 · 화면 잠금</h3>
+            <p data-i18n="f5_d">잠들기 전 타이머를 맞추고, 화면 잠금으로 어둡게 두고 들을 수 있어요.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">🌏</span>
+            <h3 data-i18n="f6_t">4개 언어 지원</h3>
+            <p data-i18n="f6_d">한국어, English, 日本語, 简体中文을 지원해요.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screens">
+        <h2 data-i18n="shots_h">화면 미리보기</h2>
+        <p class="sub" data-i18n="shots_sub">옆으로 넘겨 보세요.</p>
+        <div class="shots">
+          <figure>
+            <img data-shot="home" src="/img/home-ko.jpg" alt="" loading="lazy" />
+            <figcaption data-i18n="s_home">홈 — 두 영상을 겹쳐 재생</figcaption>
+          </figure>
+          <figure>
+            <img data-shot="theme" src="/img/theme-ko.jpg" alt="" loading="lazy" />
+            <figcaption data-i18n="s_theme">테마 — 채널별로 골라 듣기</figcaption>
+          </figure>
+          <figure>
+            <img data-shot="channel" src="/img/channel-ko.jpg" alt="" loading="lazy" />
+            <figcaption data-i18n="s_channel">채널 리스트</figcaption>
+          </figure>
+          <figure>
+            <img data-shot="settings" src="/img/settings-ko.jpg" alt="" loading="lazy" />
+            <figcaption data-i18n="s_settings">설정 — 타이머·백업·이용 안내</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="howto">
+        <h2 data-i18n="how_h">사용법</h2>
+        <p class="sub" data-i18n="how_sub">처음이라도 1분이면 충분해요.</p>
+        <ol class="steps">
+          <li>
+            <b data-i18n="h1_t">홈에서 ASMR과 CALM 고르기</b>
+            <span data-i18n="h1_d">홈 화면 아래 목록에서 왼쪽은 ASMR, 오른쪽은 CALM 영상을 골라 재생해요. 위쪽의 ASMR/CALM 탭으로 지금 조작할 영상을 바꿀 수 있어요.</span>
+          </li>
+          <li>
+            <b data-i18n="h2_t">스피커 버튼으로 소리 켜고 끄기</b>
+            <span data-i18n="h2_d">각 영상의 스피커 아이콘으로 소리를 켜고 꺼요. 중앙 버튼으로 두 영상을 함께 재생·정지하고, 반복 버튼으로 반복 방식을 바꿔요.</span>
+          </li>
+          <li>
+            <b data-i18n="h3_t">테마 탭에서 채널 둘러보기</b>
+            <span data-i18n="h3_d">빗소리·숲·재즈·클래식 같은 테마의 채널을 둘러보고, ★를 눌러 마이 리스트에 담아 두세요.</span>
+          </li>
+          <li>
+            <b data-i18n="h4_t">보관함에 저장하기</b>
+            <span data-i18n="h4_d">영상의 "⋯" 버튼으로 보관함에 저장해요. 유튜브 앱·웹의 공유 메뉴에서 hush time을 골라도 바로 저장돼요. 보관함에 ASMR과 CALM이 하나씩 있으면 함께 재생할 수 있어요.</span>
+          </li>
+          <li>
+            <b data-i18n="h5_t">잠들기 전: 타이머와 화면 잠금</b>
+            <span data-i18n="h5_d">화면 위쪽 시계 아이콘으로 취침 타이머를, 자물쇠 아이콘으로 화면 잠금을 켜요. 잠금을 풀려면 화면에 손가락으로 Z를 그리면 돼요.</span>
+          </li>
+          <li>
+            <b data-i18n="h6_t">설정에서 백업하기</b>
+            <span data-i18n="h6_d">설정에서 보관함·즐겨찾기·반복 설정을 파일 하나로 백업하고, 기기를 바꾸거나 앱을 다시 설치할 때 복원할 수 있어요.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="notes">
+        <h2 data-i18n="notes_h">알아 두세요</h2>
+        <ul class="notes">
+          <li data-i18n="n1">hush time은 유튜브 서드파티 서비스로, 유튜브 정책을 준수하여 서비스합니다.</li>
+          <li data-i18n="n2">유튜브 정책상 백그라운드 재생을 제공할 수 없어요. 앱을 내리거나 화면을 잠그면 재생이 멈추니, 듣는 동안에는 앱을 켜 두고 앱 안의 화면 잠금 기능을 이용해 주세요.</li>
+          <li data-i18n="n3">영상 크리에이터가 외부 재생을 허용한 영상만 재생돼서, 일부 영상은 재생되지 않을 수 있어요.</li>
+          <li data-i18n="n4">앱은 무료로 내려받을 수 있고, 일부 기능은 정기 결제(구독)로 이용할 수 있어요. 처음 7일은 무료로 체험할 수 있어요.</li>
+        </ul>
+      </section>
+
+      <section class="cta" id="download">
+        <h2 data-i18n="cta_h">지금 쉬어 가세요</h2>
+        <p class="sub" data-i18n="cta_sub">쉼이 필요한 시간, hush time</p>
+        <div class="stores">
+          <a class="btn" id="btn-ios-2" href="#">
+            <small data-i18n="dl_on">다운로드</small>
+            <strong>App Store</strong>
+          </a>
+          <a class="btn" id="btn-android-2" href="#">
+            <small data-i18n="dl_on">다운로드</small>
+            <strong>Google Play</strong>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <a href="/privacy/" data-i18n="privacy">개인정보처리방침</a>
+        <a href="mailto:doozogak@gmail.com" data-i18n="contact">문의: doozogak@gmail.com</a>
+        <p class="muted">© 2026 doozogak (두조각)</p>
+      </footer>
+    </div>
+
+    <script>
+      // 스토어 주소. App Store는 앱 등록 후 확정되는 URL(https://apps.apple.com/app/id숫자)을 넣으면 된다.
+      // 비어 있으면 버튼이 "곧 출시"로 비활성 표시된다.
+      var STORE = {
+        ios: "",
+        android: "https://play.google.com/store/apps/details?id=com.doozogak.hushtime",
+      };
+
+      var T = {
+        ko: {
+          tagline: "쉼이 필요한 시간, hush time",
+          lead: "ASMR 하나와 편안한 음악 하나를 동시에 틀어, 나만의 조합으로 겹쳐 듣는 힐링 앱입니다.",
+          dl_on: "다운로드",
+          soon: "곧 출시",
+          about_h: "이런 앱이에요",
+          about_sub: "빗소리 위에 재즈 피아노를, 파도 소리 위에 로파이를. 두 영상을 취향대로 골라 겹쳐 보세요.",
+          f1_t: "두 영상 동시 재생",
+          f1_d: '<span class="tag-asmr">ASMR</span> 1개와 <span class="tag-calm">CALM</span> 1개를 한 화면에서 함께 재생해요.',
+          f3_t: "테마별 채널 모음",
+          f3_d: "빗소리, 숲, 재즈, 클래식 등 테마별 채널을 모아 두었고 ★로 즐겨찾기를 할 수 있어요.",
+          f4_t: "나만의 보관함",
+          f4_d: "마음에 드는 영상을 보관함에 모으고, 유튜브 공유 메뉴에서 바로 저장할 수 있어요.",
+          f5_t: "취침 타이머 · 화면 잠금",
+          f5_d: "잠들기 전 타이머를 맞추고, 화면 잠금으로 어둡게 두고 들을 수 있어요.",
+          f6_t: "4개 언어 지원",
+          f6_d: "한국어, English, 日本語, 简体中文을 지원해요.",
+          shots_h: "화면 미리보기",
+          shots_sub: "옆으로 넘겨 보세요.",
+          s_home: "홈 — 두 영상을 겹쳐 재생",
+          s_theme: "테마 — 채널별로 골라 듣기",
+          s_channel: "채널 리스트",
+          s_settings: "설정 — 타이머·백업·이용 안내",
+          how_h: "사용법",
+          how_sub: "처음이라도 1분이면 충분해요.",
+          h1_t: "홈에서 ASMR과 CALM 고르기",
+          h1_d: "홈 화면 아래 목록에서 왼쪽은 ASMR, 오른쪽은 CALM 영상을 골라 재생해요. 위쪽의 ASMR/CALM 탭으로 지금 조작할 영상을 바꿀 수 있어요.",
+          h2_t: "스피커 버튼으로 소리 켜고 끄기",
+          h2_d: "각 영상의 스피커 아이콘으로 소리를 켜고 꺼요. 중앙 버튼으로 두 영상을 함께 재생·정지하고, 반복 버튼으로 반복 방식을 바꿔요.",
+          h3_t: "테마 탭에서 채널 둘러보기",
+          h3_d: "빗소리·숲·재즈·클래식 같은 테마의 채널을 둘러보고, ★를 눌러 마이 리스트에 담아 두세요.",
+          h4_t: "보관함에 저장하기",
+          h4_d: '영상의 "⋯" 버튼으로 보관함에 저장해요. 유튜브 앱·웹의 공유 메뉴에서 hush time을 골라도 바로 저장돼요. 보관함에 ASMR과 CALM이 하나씩 있으면 함께 재생할 수 있어요.',
+          h5_t: "잠들기 전: 타이머와 화면 잠금",
+          h5_d: "화면 위쪽 시계 아이콘으로 취침 타이머를, 자물쇠 아이콘으로 화면 잠금을 켜요. 잠금을 풀려면 화면에 손가락으로 Z를 그리면 돼요.",
+          h6_t: "설정에서 백업하기",
+          h6_d: "설정에서 보관함·즐겨찾기·반복 설정을 파일 하나로 백업하고, 기기를 바꾸거나 앱을 다시 설치할 때 복원할 수 있어요.",
+          notes_h: "알아 두세요",
+          n1: "hush time은 유튜브 서드파티 서비스로, 유튜브 정책을 준수하여 서비스합니다.",
+          n2: "유튜브 정책상 백그라운드 재생을 제공할 수 없어요. 앱을 내리거나 화면을 잠그면 재생이 멈추니, 듣는 동안에는 앱을 켜 두고 앱 안의 화면 잠금 기능을 이용해 주세요.",
+          n3: "영상 크리에이터가 외부 재생을 허용한 영상만 재생돼서, 일부 영상은 재생되지 않을 수 있어요.",
+          n4: "앱은 무료로 내려받을 수 있고, 일부 기능은 정기 결제(구독)로 이용할 수 있어요. 처음 7일은 무료로 체험할 수 있어요.",
+          cta_h: "지금 쉬어 가세요",
+          cta_sub: "쉼이 필요한 시간, hush time",
+          privacy: "개인정보처리방침",
+          contact: "문의: doozogak@gmail.com",
+          desc: "쉼이 필요한 시간, hush time. ASMR과 편안한 음악을 겹쳐 듣는 힐링 앱.",
+        },
+        en: {
+          tagline: "Time for rest, hush time",
+          lead: "A healing app that plays one ASMR video and one calming music video at the same time, so you can layer them into your own mix.",
+          dl_on: "Download",
+          soon: "Coming soon",
+          about_h: "What is hush time?",
+          about_sub: "Jazz piano over the rain, lo-fi over the waves. Pick two videos and layer them to your taste.",
+          f1_t: "Two videos at once",
+          f1_d: 'Play one <span class="tag-asmr">ASMR</span> and one <span class="tag-calm">CALM</span> video together on a single screen.',
+          f3_t: "Channels by theme",
+          f3_d: "Browse channels by theme such as rain, forest, jazz and classical, and tap ★ to favorite them.",
+          f4_t: "Your own library",
+          f4_d: "Collect the videos you love in your library, or save them straight from YouTube's share menu.",
+          f5_t: "Sleep timer & screen lock",
+          f5_d: "Set a timer before you fall asleep, and keep the screen dark with screen lock while you listen.",
+          f6_t: "4 languages",
+          f6_d: "Available in 한국어, English, 日本語 and 简体中文.",
+          shots_h: "Screenshots",
+          shots_sub: "Swipe sideways to see more.",
+          s_home: "Home — layer two videos",
+          s_theme: "Themes — pick by channel",
+          s_channel: "Channel list",
+          s_settings: "Settings — timer, backup, guide",
+          how_h: "How to use",
+          how_sub: "One minute is all it takes.",
+          h1_t: "Pick ASMR and CALM on Home",
+          h1_d: "In the list below the player, choose an ASMR video on the left and a CALM video on the right. The ASMR/CALM switch above selects which video you are controlling.",
+          h2_t: "Turn sound on or off with the speaker buttons",
+          h2_d: "Tap each video's speaker icon to turn its sound on or off. The center button plays or pauses both videos, and the repeat button changes the repeat mode.",
+          h3_t: "Explore channels in the Theme tab",
+          h3_d: "Browse channels by theme such as rain, forest, jazz and classical, and tap ★ to add them to My List.",
+          h4_t: "Save to your library",
+          h4_d: 'Tap "⋯" on a video to save it to your library. You can also pick hush time from the share menu in YouTube. With one ASMR and one CALM video in a library, you can play them together.',
+          h5_t: "Before bed: timer and screen lock",
+          h5_d: "Use the clock icon at the top for the sleep timer and the lock icon for screen lock. To unlock, draw a Z on the screen with your finger.",
+          h6_t: "Back up in Settings",
+          h6_d: "Back up your library, favorites and repeat settings to a single file in Settings, and restore it when you switch devices or reinstall the app.",
+          notes_h: "Good to know",
+          n1: "hush time is a third-party YouTube service and complies with YouTube's policies.",
+          n2: "Due to YouTube's policies, background playback is not available. Playback stops when you leave the app or lock the screen, so keep the app open while listening and use the in-app screen lock.",
+          n3: "Only videos whose creators allow playback outside YouTube can be played, so some videos may not play.",
+          n4: "The app is free to download, and some features are available with a subscription. The first 7 days are a free trial.",
+          cta_h: "Take a moment to rest",
+          cta_sub: "Time for rest, hush time",
+          privacy: "Privacy Policy",
+          contact: "Contact: doozogak@gmail.com",
+          desc: "Time for rest, hush time. A healing app that layers ASMR with calming music.",
+        },
+        ja: {
+          tagline: "休息の時間、hush time",
+          lead: "ASMRと心地よい音楽を1つずつ同時に流して、自分だけの組み合わせで重ねて聴けるヒーリングアプリです。",
+          dl_on: "ダウンロード",
+          soon: "近日公開",
+          about_h: "hush timeとは",
+          about_sub: "雨音にジャズピアノを、波の音にローファイを。2つの動画を好みに合わせて選び、重ねてみましょう。",
+          f1_t: "2つの動画を同時再生",
+          f1_d: '<span class="tag-asmr">ASMR</span>1つと<span class="tag-calm">CALM</span>1つを、1画面で一緒に再生します。',
+          f3_t: "テーマ別チャンネル",
+          f3_d: "雨音、森、ジャズ、クラシックなどテーマ別にチャンネルを集めてあり、★でお気に入りに追加できます。",
+          f4_t: "自分だけのライブラリ",
+          f4_d: "お気に入りの動画をライブラリに集め、YouTubeの共有メニューからそのまま保存できます。",
+          f5_t: "スリープタイマー・画面ロック",
+          f5_d: "眠る前にタイマーを設定し、画面ロックで暗くしたまま聴けます。",
+          f6_t: "4言語に対応",
+          f6_d: "한국어、English、日本語、简体中文に対応しています。",
+          shots_h: "画面プレビュー",
+          shots_sub: "横にスワイプして見てください。",
+          s_home: "ホーム — 2つの動画を重ねて再生",
+          s_theme: "テーマ — チャンネルから選ぶ",
+          s_channel: "チャンネルリスト",
+          s_settings: "設定 — タイマー・バックアップ・ご利用案内",
+          how_h: "使い方",
+          how_sub: "初めてでも1分あれば十分です。",
+          h1_t: "ホームでASMRとCALMを選ぶ",
+          h1_d: "プレーヤー下のリストで、左はASMR、右はCALMの動画を選んで再生します。上のASMR/CALMタブで操作する動画を切り替えられます。",
+          h2_t: "スピーカーボタンで音をオン・オフ",
+          h2_d: "各動画のスピーカーアイコンで音をオン・オフします。中央のボタンで2つの動画をまとめて再生・停止し、リピートボタンでリピート方法を変えられます。",
+          h3_t: "テーマタブでチャンネルを探す",
+          h3_d: "雨音・森・ジャズ・クラシックなどのテーマでチャンネルを探し、★を押してマイリストに追加しましょう。",
+          h4_t: "ライブラリに保存する",
+          h4_d: "動画の「⋯」ボタンでライブラリに保存します。YouTubeの共有メニューからhush timeを選んでも保存できます。ライブラリにASMRとCALMが1つずつあれば、一緒に再生できます。",
+          h5_t: "眠る前に：タイマーと画面ロック",
+          h5_d: "画面上部の時計アイコンでスリープタイマー、鍵アイコンで画面ロックをオンにします。ロックを解除するには、画面に指でZを描きます。",
+          h6_t: "設定でバックアップ",
+          h6_d: "設定でライブラリ・お気に入り・リピート設定を1つのファイルにバックアップし、機種変更やアプリの再インストール時に復元できます。",
+          notes_h: "ご案内",
+          n1: "hush timeはYouTubeのサードパーティサービスで、YouTubeのポリシーを遵守して提供しています。",
+          n2: "YouTubeのポリシー上、バックグラウンド再生は提供できません。アプリを閉じたり画面をロックしたりすると再生が止まるため、聴いている間はアプリを開いたままにし、アプリ内の画面ロック機能をご利用ください。",
+          n3: "動画の制作者がYouTube外での再生を許可している動画のみ再生できるため、再生できない動画があります。",
+          n4: "アプリは無料でダウンロードでき、一部の機能は定期購読でご利用いただけます。最初の7日間は無料でお試しいただけます。",
+          cta_h: "ひと休みしませんか",
+          cta_sub: "休息の時間、hush time",
+          privacy: "プライバシーポリシー",
+          contact: "お問い合わせ：doozogak@gmail.com",
+          desc: "休息の時間、hush time。ASMRと心地よい音楽を重ねて聴くヒーリングアプリ。",
+        },
+        zh: {
+          tagline: "需要休息的时刻，hush time",
+          lead: "同时播放一个 ASMR 和一个舒缓音乐视频，叠加成专属于你的治愈组合。",
+          dl_on: "下载",
+          soon: "即将上线",
+          about_h: "这是一款什么样的应用",
+          about_sub: "雨声里叠一段爵士钢琴，海浪声里叠一曲 Lo-fi。挑选两个视频，按喜好叠加。",
+          f1_t: "同时播放两个视频",
+          f1_d: '在同一屏幕中同时播放 1 个 <span class="tag-asmr">ASMR</span> 和 1 个 <span class="tag-calm">CALM</span> 视频。',
+          f3_t: "按主题整理的频道",
+          f3_d: "按雨声、森林、爵士、古典等主题收录频道，点 ★ 即可收藏。",
+          f4_t: "专属收藏库",
+          f4_d: "把喜欢的视频收进收藏库，也可以直接从 YouTube 的分享菜单保存。",
+          f5_t: "睡眠定时器 · 屏幕锁定",
+          f5_d: "睡前设置定时器，并用屏幕锁定保持黑屏继续收听。",
+          f6_t: "支持 4 种语言",
+          f6_d: "支持 한국어、English、日本語、简体中文。",
+          shots_h: "界面预览",
+          shots_sub: "左右滑动查看更多。",
+          s_home: "首页 — 叠加播放两个视频",
+          s_theme: "主题 — 按频道挑选",
+          s_channel: "频道列表",
+          s_settings: "设置 — 定时器·备份·使用说明",
+          how_h: "使用方法",
+          how_sub: "第一次使用，一分钟就够了。",
+          h1_t: "在首页选择 ASMR 和 CALM",
+          h1_d: "在播放器下方的列表中，左侧选择 ASMR 视频，右侧选择 CALM 视频并播放。上方的 ASMR/CALM 标签用来切换当前要操作的视频。",
+          h2_t: "用扬声器按钮开关声音",
+          h2_d: "点击每个视频的扬声器图标开关声音。中间的按钮可同时播放或暂停两个视频，重复按钮用于切换重复方式。",
+          h3_t: "在主题标签中浏览频道",
+          h3_d: "浏览雨声、森林、爵士、古典等主题的频道，点 ★ 加入“我的列表”。",
+          h4_t: "保存到收藏库",
+          h4_d: "点视频上的“⋯”按钮即可保存到收藏库。也可以在 YouTube 的分享菜单中选择 hush time 直接保存。收藏库中各有一个 ASMR 和 CALM 视频时，就能一起播放。",
+          h5_t: "睡前：定时器与屏幕锁定",
+          h5_d: "用屏幕上方的时钟图标设置睡眠定时器，用锁形图标开启屏幕锁定。要解锁，请用手指在屏幕上画一个 Z。",
+          h6_t: "在设置中备份",
+          h6_d: "在设置中将收藏库、收藏和重复设置备份为一个文件，更换设备或重新安装应用时可以恢复。",
+          notes_h: "温馨提示",
+          n1: "hush time 是 YouTube 的第三方服务，并遵守 YouTube 的政策。",
+          n2: "根据 YouTube 政策，无法提供后台播放。退出应用或锁屏后播放会停止，收听时请保持应用开启，并使用应用内的屏幕锁定功能。",
+          n3: "只有视频创作者允许在 YouTube 以外播放的视频才能播放，因此部分视频可能无法播放。",
+          n4: "应用可免费下载，部分功能需通过订阅使用。前 7 天可免费试用。",
+          cta_h: "现在就休息一下吧",
+          cta_sub: "需要休息的时刻，hush time",
+          privacy: "隐私政策",
+          contact: "联系我们：doozogak@gmail.com",
+          desc: "需要休息的时刻，hush time。叠加 ASMR 与舒缓音乐的治愈应用。",
+        },
+      };
+
+      var HTML_LANG = { ko: "ko", en: "en", ja: "ja", zh: "zh-Hans" };
+
+      function pickLang() {
+        var q = new URLSearchParams(location.search).get("lang");
+        if (q && T[q]) return q;
+        var saved = null;
+        try {
+          saved = localStorage.getItem("hushtime_lang");
+        } catch (e) {}
+        if (saved && T[saved]) return saved;
+        var n = (navigator.language || "ko").toLowerCase();
+        if (n.indexOf("ko") === 0) return "ko";
+        if (n.indexOf("ja") === 0) return "ja";
+        if (n.indexOf("zh") === 0) return "zh";
+        return "en";
+      }
+
+      function setStoreButton(id, url, t) {
+        var a = document.getElementById(id);
+        if (url) {
+          a.href = url;
+          a.removeAttribute("aria-disabled");
+        } else {
+          a.removeAttribute("href");
+          a.setAttribute("aria-disabled", "true");
+        }
+      }
+
+      function apply(lang) {
+        var t = T[lang];
+        document.documentElement.lang = HTML_LANG[lang];
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var v = t[el.getAttribute("data-i18n")];
+          if (v !== undefined) el.innerHTML = v;
+        });
+        document.querySelectorAll("[data-shot]").forEach(function (img) {
+          img.src = "/img/" + img.getAttribute("data-shot") + "-" + lang + ".jpg";
+        });
+        document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+          b.setAttribute("aria-pressed", b.getAttribute("data-set-lang") === lang ? "true" : "false");
+        });
+        ["btn-ios", "btn-ios-2"].forEach(function (id) {
+          setStoreButton(id, STORE.ios);
+          if (!STORE.ios) document.querySelector("#" + id + " small").textContent = t.soon;
+        });
+        ["btn-android", "btn-android-2"].forEach(function (id) {
+          setStoreButton(id, STORE.android);
+          if (!STORE.android) document.querySelector("#" + id + " small").textContent = t.soon;
+        });
+        document.title = "hush time";
+        document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", t.desc);
+      }
+
+      document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var l = b.getAttribute("data-set-lang");
+          try {
+            localStorage.setItem("hushtime_lang", l);
+          } catch (e) {}
+          apply(l);
+        });
+      });
+
+      apply(pickLang());
+    </script>
+  </body>
 </html>
