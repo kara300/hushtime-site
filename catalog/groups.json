@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "categories": {
+    "asmr": {
+      "fallback": "mix",
+      "groups": [
+        {"id": "rain", "names": {"ko": "비·천둥", "en": "Rain & Thunder", "ja": "雨・雷", "zh-Hans": "雨声·雷声"}},
+        {"id": "fire", "names": {"ko": "불(모닥불·벽난로)", "en": "Fire & Fireplace", "ja": "焚き火・暖炉", "zh-Hans": "篝火·壁炉"}},
+        {"id": "ocean", "names": {"ko": "바다·파도", "en": "Ocean & Waves", "ja": "海・波", "zh-Hans": "海洋·海浪"}},
+        {"id": "water", "names": {"ko": "강·계곡·폭포", "en": "River, Stream & Waterfall", "ja": "川・渓流・滝", "zh-Hans": "河流·溪谷·瀑布"}},
+        {"id": "forest", "names": {"ko": "숲·새·벌레", "en": "Forest, Birds & Insects", "ja": "森・鳥・虫", "zh-Hans": "森林·鸟鸣·虫鸣"}},
+        {"id": "wind", "names": {"ko": "바람·눈", "en": "Wind & Snow", "ja": "風・雪", "zh-Hans": "风声·雪"}},
+        {"id": "noise", "names": {"ko": "백색소음", "en": "White Noise", "ja": "ホワイトノイズ", "zh-Hans": "白噪音"}},
+        {"id": "mix", "names": {"ko": "기타·혼합", "en": "Mixed & Other", "ja": "その他・ミックス", "zh-Hans": "其他·混合"}}
+      ]
+    },
+    "calm": {
+      "fallback": "mix",
+      "groups": [
+        {"id": "jazz", "names": {"ko": "재즈·보사노바", "en": "Jazz & Bossa Nova", "ja": "ジャズ・ボサノバ", "zh-Hans": "爵士·波萨诺瓦"}},
+        {"id": "classical", "names": {"ko": "클래식·오케스트라", "en": "Classical & Orchestra", "ja": "クラシック・オーケストラ", "zh-Hans": "古典·管弦乐"}},
+        {"id": "lofi", "names": {"ko": "로파이", "en": "Lo-fi", "ja": "ローファイ", "zh-Hans": "Lo-fi"}},
+        {"id": "piano", "names": {"ko": "피아노", "en": "Piano", "ja": "ピアノ", "zh-Hans": "钢琴"}},
+        {"id": "guitar", "names": {"ko": "기타", "en": "Guitar", "ja": "ギター", "zh-Hans": "吉他"}},
+        {"id": "strings", "names": {"ko": "첼로·바이올린·현악", "en": "Cello, Violin & Strings", "ja": "チェロ・バイオリン・弦楽", "zh-Hans": "大提琴·小提琴·弦乐"}},
+        {"id": "pop", "names": {"ko": "가요·OST·팝", "en": "Pop, K-Pop & OST", "ja": "ポップ・K-POP・OST", "zh-Hans": "流行·K-Pop·OST"}},
+        {"id": "meditation", "names": {"ko": "명상·기도", "en": "Meditation & Prayer", "ja": "瞑想・祈り", "zh-Hans": "冥想·祈祷"}},
+        {"id": "sleep", "names": {"ko": "수면·힐링", "en": "Sleep & Healing", "ja": "睡眠・ヒーリング", "zh-Hans": "睡眠·疗愈"}},
+        {"id": "mix", "names": {"ko": "기타·혼합", "en": "Mixed & Other", "ja": "その他・ミックス", "zh-Hans": "其他·混合"}}
+      ]
+    }
+  }
+}
