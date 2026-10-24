@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-24T14:12:02Z",
+  "generatedAt": "2026-10-24T14:34:54Z",
   "playlists": [
     {"id": "PLBtmtYs1qJY4", "title": "#M#ASMR#01#ASMR", "thumbnailUrl": "https://i.ytimg.com/vi/8SFOMVzNPlc/mqdefault.jpg", "createdAt": "2026-07-25T08:28:06Z", "channelTitle": "힐링사운드 ASMR", "itemCount": 11, "latestAddedAt": "2026-08-22T16:14:35Z"},
     {"id": "PLYNLBV3uoCZw", "title": "#M#CALM#01#CALM", "thumbnailUrl": "https://i.ytimg.com/vi/8dbrq4r31Rc/mqdefault.jpg", "createdAt": "2026-07-25T08:31:59Z", "channelTitle": "윤지상 (Ji Sang)", "itemCount": 15, "latestAddedAt": "2026-09-05T06:51:49Z"},
@@ -57,7 +57,8 @@
     {"id": "PLcGkkXtask_ffemFWPbh1WaEfH8fR3eV0", "title": "#T#CALM#classical#Classical Music Nights - HalidonMusic", "thumbnailUrl": "https://i.ytimg.com/vi/f_FSWEg9Wgk/mqdefault.jpg", "createdAt": "2023-05-22T07:58:07Z", "channelTitle": "HALIDONMUSIC", "itemCount": 20, "latestAddedAt": "2025-10-03T10:35:04Z", "group": "classical"},
     {"id": "PLcGkkXtask_djh9pNleoB0amq0ocsUTXk", "title": "#T#CALM#classical#Fast, Energetic Classical Music | HalidonMusic", "thumbnailUrl": "https://i.ytimg.com/vi/ZaDvuieuUmI/mqdefault.jpg", "createdAt": "2023-11-07T09:41:44Z", "channelTitle": "HALIDONMUSIC", "itemCount": 58, "latestAddedAt": "2026-09-30T08:53:48Z", "group": "classical"},
     {"id": "UUNWBpYoWJ1ss2YDONibt-Iw", "title": "#T#CALM#classical#Shin Guitar Sound", "thumbnailUrl": "https://i.ytimg.com/vi/QnHAE3rtxrk/mqdefault.jpg", "createdAt": "2019-05-27T12:36:19Z", "channelTitle": "Shin Guitar Sound", "itemCount": 35, "latestAddedAt": "2026-10-23T12:37:01Z", "group": "classical"},
-    {"id": "UU58Ln4y-q9xJShV_wTPFSWg", "title": "#T#CALM#classical#yoon acacia", "thumbnailUrl": "https://i.ytimg.com/vi/izPIu4bpyfE/mqdefault.jpg", "createdAt": "2026-06-11T07:49:56Z", "channelTitle": "yoon acacia", "itemCount": 75, "latestAddedAt": "2026-10-24T13:32:23Z", "group": "classical"},
+    {"id": "PLlhzjNpbwkX5UVfLdTezQMb3yTl5oPN7o", "title": "#T#CALM#classical#묵상음악 | 기도음악 | 휴식음악 | 수면음악 | 피아노 & 첼로 연주", "thumbnailUrl": "https://i.ytimg.com/vi/vLrwSdPnBKc/mqdefault.jpg", "createdAt": "2026-06-24T15:18:26Z", "channelTitle": "yoon acacia", "itemCount": 9, "latestAddedAt": "2026-08-20T01:57:34Z", "group": "classical"},
+    {"id": "PLCnL-vw8UOKY", "title": "#T#CALM#classical#편안한 클레식/ 작업용 BGM/독서/명상/휴식", "thumbnailUrl": "https://i.ytimg.com/vi/RQ9HAwae5BY/mqdefault.jpg", "createdAt": "2026-07-19T11:31:20Z", "channelTitle": "yoon acacia", "itemCount": 31, "latestAddedAt": "2026-10-22T12:15:10Z", "group": "classical"},
     {"id": "PLOKsz2j66xwg", "title": "#T#CALM#guitar#Cozy Folk Guitar | Warm Acoustic Melodies for Relaxation & Sleep", "thumbnailUrl": "https://i.ytimg.com/vi/Pc9Ev2XVvVc/mqdefault.jpg", "createdAt": "2026-07-21T04:01:34Z", "channelTitle": "Cozy Folk Guitar", "itemCount": 42, "latestAddedAt": "2026-09-06T01:12:40Z", "group": "guitar"},
     {"id": "PLLvdXbHHUbddF0trPmc-FU8SAuIh7era2", "title": "#T#CALM#guitar#Pop Songs", "thumbnailUrl": "https://i.ytimg.com/vi/DSN5-mJsQlQ/mqdefault.jpg", "createdAt": "2016-12-12T11:52:33Z", "channelTitle": "Albert Gyorfi", "itemCount": 32, "latestAddedAt": "2021-07-17T20:40:47Z", "group": "guitar"},
     {"id": "PLU9rD-T6UYB4", "title": "#T#CALM#jazz#Cozy Morning Jazz", "thumbnailUrl": "https://i.ytimg.com/vi/wtOyWuR2ru8/mqdefault.jpg", "createdAt": "2026-07-07T07:27:48Z", "channelTitle": "OdelierJazz", "itemCount": 8, "latestAddedAt": "2026-08-20T15:30:39Z", "group": "jazz"},
