@@ -14,7 +14,7 @@
       :root {
         --bg: #0e1a33;
         --bg2: #14264a;
-        --card: #17294d;
+        --card: rgba(23, 41, 77, 0.72);
         --fg: #f2f4f8;
         --muted: #a9b4cc;
         --line: #24365c;
@@ -22,20 +22,6 @@
         --accent-fg: #0e1a33;
         --asmr: #ffa64d;
         --calm: #7fd0ff;
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #f5f7fb;
-          --bg2: #e9eef8;
-          --card: #ffffff;
-          --fg: #14213d;
-          --muted: #5b6784;
-          --line: #dbe2f0;
-          --accent: #1a5fd1;
-          --accent-fg: #ffffff;
-          --asmr: #c2680a;
-          --calm: #0a78b5;
-        }
       }
       * {
         box-sizing: border-box;
@@ -47,6 +33,7 @@
         margin: 0;
         background: var(--bg);
         color: var(--fg);
+        position: relative;
         font:
           16px/1.7 -apple-system,
           BlinkMacSystemFont,
@@ -69,6 +56,89 @@
       }
       .muted {
         color: var(--muted);
+      }
+
+
+      /* 밤하늘 배경: 달 · 별 · 반딧불 */
+      .sky {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 50% 110%, #1d3a6e 0%, transparent 60%),
+          linear-gradient(180deg, #08122a 0%, #0e1f44 55%, #16305e 100%);
+      }
+      .moon {
+        position: absolute;
+        top: 7%;
+        left: 12%;
+        width: clamp(72px, 11vw, 128px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 32% 30%, #ffffff 0%, #f1f1ea 45%, #dcdcd2 100%);
+        box-shadow:
+          0 0 30px 8px rgba(255, 255, 240, 0.55),
+          0 0 120px 40px rgba(150, 190, 255, 0.28);
+      }
+      .moon::before,
+      .moon::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(170, 170, 160, 0.22);
+      }
+      .moon::before {
+        width: 26%;
+        height: 26%;
+        top: 22%;
+        left: 54%;
+      }
+      .moon::after {
+        width: 18%;
+        height: 18%;
+        top: 58%;
+        left: 28%;
+      }
+      .star {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        animation: twinkle var(--d, 4s) ease-in-out var(--delay, 0s) infinite;
+      }
+      .star.spark {
+        background: #ffe9b0;
+        box-shadow: 0 0 6px 1px rgba(255, 226, 150, 0.8);
+      }
+      .firefly {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ffe98a;
+        box-shadow:
+          0 0 6px 2px rgba(255, 228, 120, 0.9),
+          0 0 18px 6px rgba(255, 220, 100, 0.35);
+        animation:
+          drift var(--dur, 14s) ease-in-out var(--delay, 0s) infinite alternate,
+          glow var(--g, 3s) ease-in-out var(--delay, 0s) infinite;
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: var(--o, 0.9); }
+        50% { opacity: 0.15; }
+      }
+      @keyframes drift {
+        from { transform: translate(0, 0); }
+        to { transform: translate(var(--x, 30px), var(--y, -40px)); }
+      }
+      @keyframes glow {
+        0%, 100% { opacity: 0.15; }
+        50% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .star, .firefly { animation: none; }
       }
 
       /* 상단 언어 전환 */
@@ -336,6 +406,7 @@
     </style>
   </head>
   <body>
+    <div class="sky" id="sky" aria-hidden="true"><div class="moon"></div></div>
     <div class="wrap">
       <div class="topbar">
         <div class="langs" role="group" aria-label="Language">
@@ -490,6 +561,31 @@
       </footer>
     </div>
 
+    <script>
+      // 밤하늘: 별과 반딧불을 무작위로 흩뿌린다.
+      (function () {
+        var sky = document.getElementById("sky");
+        function r(a, b) {
+          return a + Math.random() * (b - a);
+        }
+        function add(cls, css) {
+          var d = document.createElement("div");
+          d.className = cls;
+          d.style.cssText = css;
+          sky.appendChild(d);
+        }
+        for (var i = 0; i < 90; i++) {
+          var sz = r(1, 2.4).toFixed(1);
+          add("star", "left:" + r(0, 100).toFixed(1) + "%;top:" + r(0, 85).toFixed(1) + "%;width:" + sz + "px;height:" + sz + "px;--o:" + r(0.4, 1).toFixed(2) + ";--d:" + r(3, 7).toFixed(1) + "s;--delay:-" + r(0, 7).toFixed(1) + "s");
+        }
+        for (var j = 0; j < 8; j++) {
+          add("star spark", "left:" + r(3, 97).toFixed(1) + "%;top:" + r(2, 70).toFixed(1) + "%;width:3px;height:3px;--d:" + r(3, 5).toFixed(1) + "s;--delay:-" + r(0, 5).toFixed(1) + "s");
+        }
+        for (var k = 0; k < 14; k++) {
+          add("firefly", "left:" + r(2, 96).toFixed(1) + "%;top:" + r(45, 95).toFixed(1) + "%;--x:" + r(-60, 60).toFixed(0) + "px;--y:" + r(-80, 20).toFixed(0) + "px;--dur:" + r(10, 20).toFixed(1) + "s;--g:" + r(2.5, 5).toFixed(1) + "s;--delay:-" + r(0, 10).toFixed(1) + "s");
+        }
+      })();
+    </script>
     <script>
       // 스토어 주소. 비어 있으면 버튼이 "곧 출시"로 비활성 표시된다.
       // Android는 Google Play 공개 후 https://play.google.com/store/apps/details?id=com.doozogak.hushtime 을 넣는다.
