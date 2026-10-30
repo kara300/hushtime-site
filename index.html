@@ -337,6 +337,22 @@
         overflow-x: auto;
         padding: 4px 4px 16px;
         scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(127, 176, 255, 0.45) transparent;
+      }
+      .shots::-webkit-scrollbar {
+        height: 6px;
+      }
+      .shots::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 999px;
+      }
+      .shots::-webkit-scrollbar-thumb {
+        background: rgba(127, 176, 255, 0.45);
+        border-radius: 999px;
+      }
+      .shots::-webkit-scrollbar-thumb:hover {
+        background: rgba(127, 176, 255, 0.7);
       }
       .shots figure {
         margin: 0;
