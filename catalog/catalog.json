@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T08:56:08Z",
+  "generatedAt": "2026-10-31T09:17:55Z",
   "playlists": [
     {"id": "PLBtmtYs1qJY4", "title": "#M#ASMR#01#ASMR", "thumbnailUrl": "https://i.ytimg.com/vi/8SFOMVzNPlc/mqdefault.jpg", "createdAt": "2026-07-25T08:28:06Z", "channelTitle": "힐링사운드 ASMR", "itemCount": 11, "latestAddedAt": "2026-08-22T16:14:35Z"},
     {"id": "PLYNLBV3uoCZw", "title": "#M#CALM#01#CALM", "thumbnailUrl": "https://i.ytimg.com/vi/8dbrq4r31Rc/mqdefault.jpg", "createdAt": "2026-07-25T08:31:59Z", "channelTitle": "윤지상 (Ji Sang)", "itemCount": 15, "latestAddedAt": "2026-09-05T06:51:49Z"},
@@ -34,7 +34,6 @@
     {"id": "PLMvT2vGGLTHI", "title": "#T#ASMR#forest#🍃 Focus ASMR", "thumbnailUrl": "https://i.ytimg.com/vi/08f385IUHcc/mqdefault.jpg", "createdAt": "2026-08-25T06:18:54Z", "channelTitle": "코코블럭 cocoblock", "itemCount": 56, "latestAddedAt": "2026-10-23T03:04:41Z", "group": "forest"},
     {"id": "PLzu4qOojIWjwCGMZseXkIC0rRxD6ira83", "title": "#T#ASMR#mix#Focus & Study Ambience ☕", "thumbnailUrl": "https://i.ytimg.com/vi/_YTKFF_EaS8/mqdefault.jpg", "createdAt": "2026-06-04T20:27:50Z", "channelTitle": "Gentle Noise", "itemCount": 45, "latestAddedAt": "2026-10-28T13:13:09Z", "group": "mix"},
     {"id": "PLB2QFCTvoB4g", "title": "#T#ASMR#mix#LUXURY INTERIORS", "thumbnailUrl": "https://i.ytimg.com/vi/xoZr1sweScw/mqdefault.jpg", "createdAt": "2026-07-13T15:20:34Z", "channelTitle": "Gentle Noise", "itemCount": 21, "latestAddedAt": "2026-10-14T14:21:47Z", "group": "mix"},
-    {"id": "PLzu4qOojIWjyifA5e9OYYMmc0ljwHirLb", "title": "#T#ASMR#mix#Nature Ambience", "thumbnailUrl": "https://i.ytimg.com/vi/_YTKFF_EaS8/mqdefault.jpg", "createdAt": "2026-06-03T13:56:50Z", "channelTitle": "Gentle Noise", "itemCount": 36, "latestAddedAt": "2026-10-28T13:13:09Z", "group": "mix"},
     {"id": "PLuQkVyUeW3LBAEMemzrpb9OGKMDktJI9x", "title": "#T#ASMR#mix#Nature Sounds", "thumbnailUrl": "https://i.ytimg.com/vi/esWeHZ_rfis/mqdefault.jpg", "createdAt": "2019-11-10T13:22:22Z", "channelTitle": "HEAR HERE", "itemCount": 23, "latestAddedAt": "2024-08-19T12:51:44Z", "group": "mix"},
     {"id": "PLzu4qOojIWjzoWb4FO6p1652e2r3j6FmI", "title": "#T#ASMR#mix#Sleep & Travel  Ambience", "thumbnailUrl": "https://i.ytimg.com/vi/hFgG5oWNP_A/mqdefault.jpg", "createdAt": "2026-06-01T20:41:30Z", "channelTitle": "Gentle Noise", "itemCount": 9, "latestAddedAt": "2026-08-25T12:54:35Z", "group": "mix"},
     {"id": "PL6ok3wFyN7_FUrYNHLIcGXi6G5N-yzHd3", "title": "#T#ASMR#mix#peaceful atmosphere", "thumbnailUrl": "https://i.ytimg.com/vi/2z8k0bw9JjU/mqdefault.jpg", "createdAt": "2023-07-12T14:11:43Z", "channelTitle": "dreamy sound", "itemCount": 27, "latestAddedAt": "2024-04-03T00:27:26Z", "group": "mix"},
