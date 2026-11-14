@@ -2,6 +2,9 @@
   "schemaVersion": 2,
   "id": "UUa_-xIrGlrv67BN_zhiglpA",
   "items": [
+    {"videoId": "NE-3LLdKF1w", "title": "where the morning feels easy. / a playlist for quiet hours/", "addedAt": "2026-11-13T12:00:10Z"},
+    {"videoId": "6WuRPdLfoFQ", "title": "somewhere above the noise. /a playlist for quiet hours/", "addedAt": "2026-11-12T12:00:09Z"},
+    {"videoId": "nLzk_J0KVlM", "title": "where the forest feels gentle. /a playlist for quiet hours/", "addedAt": "2026-11-11T12:00:08Z"},
     {"videoId": "onMVliin7IQ", "title": "a little peace in the hills. /a playlist for quiet hours/", "addedAt": "2026-11-10T12:00:05Z"},
     {"videoId": "WwpoUr5gtn0", "title": "where summer slows down. /a playlist for quiet hours/", "addedAt": "2026-11-09T12:00:31Z"},
     {"videoId": "kynWKCzuq6A", "title": "where the wildflowers lead us. / a playlist for quiet hours/", "addedAt": "2026-11-07T12:00:15Z"},
@@ -63,7 +66,6 @@
     {"videoId": "lPoEBp2Jy2Y", "title": "beyond the sleeping hills. / a playlist for quiet hours/", "addedAt": "2026-09-10T12:00:29Z"},
     {"videoId": "9wvrsCvs9sc", "title": "a quiet kind of love. / a playlist for quiet hours/", "addedAt": "2026-09-09T12:00:34Z"},
     {"videoId": "s3oCMXtYDXk", "title": "let the morning breathe. / a playlist for quiet hours/", "addedAt": "2026-09-08T12:00:32Z"},
-    {"videoId": "ieSs7fbbU44", "title": "nothing urgent up here. / a playlist for quiet hours/", "addedAt": "2026-09-07T12:00:36Z"},
     {"videoId": "iSr7euNGMUw", "title": "a little life together. / a playlist for quiet hours/", "addedAt": "2026-09-06T12:00:01Z"},
     {"videoId": "_kPrqgejKlE", "title": "a day worth keeping. / a playlist for quiet hours/", "addedAt": "2026-09-05T12:00:32Z"},
     {"videoId": "Qw-GjH7tnp8", "title": "a gentle way to begin. / a playlist for quiet hours/", "addedAt": "2026-09-04T12:00:36Z"},
@@ -85,7 +87,6 @@
     {"videoId": "afQDRddlPcA", "title": "somewhere the world feels quiet.  / a playlist for quiet hours/", "addedAt": "2026-08-19T12:00:01Z"},
     {"videoId": "WMN7V3JZOvM", "title": "somewhere far from the noise.  / a playlist for quiet hours/", "addedAt": "2026-08-18T12:00:02Z"},
     {"videoId": "rwvBVALuefE", "title": "slow days, sweet little moments. / a playlist for quiet hours/", "addedAt": "2026-08-17T12:00:14Z"},
-    {"videoId": "nlDQ0iWWLhg", "title": "where the little moments matter. / a playlist for quiet hours/", "addedAt": "2026-08-16T12:00:39Z"},
     {"videoId": "OEeLKFvHvNs", "title": "a gentle morning in the breeze.  / a playlist for quiet hours/", "addedAt": "2026-08-15T12:00:02Z"},
     {"videoId": "SCFNfJZsTXE", "title": "where life blooms softly. / a playlist for quiet hours/", "addedAt": "2026-08-14T12:00:27Z"},
     {"videoId": "eNB2YshbtBE", "title": "where my heart can finally breathe./ a playlist for quiet hours/", "addedAt": "2026-08-13T12:00:37Z"},
@@ -97,7 +98,6 @@
     {"videoId": "faw5hNzuxmE", "title": "where the morning opens wide. / a playlist for quiet hours/", "addedAt": "2026-08-07T12:00:29Z"},
     {"videoId": "eGKvIccKdeE", "title": "a gentle hand through life. / a playlist for quiet hours/", "addedAt": "2026-08-06T12:00:25Z"},
     {"videoId": "MI4jSADtHmM", "title": "a cup of peace in the mountains. / a playlist for quiet hours/", "addedAt": "2026-08-05T12:00:00Z"},
-    {"videoId": "nFS8QrW2AtI", "title": "reading where the mountains breathe. / a playlist for quiet hours/", "addedAt": "2026-08-04T12:00:18Z"},
     {"videoId": "g05xMuVMZAE", "title": "where the hills breathe slowly. / a playlist for quiet hours/", "addedAt": "2026-08-03T12:00:09Z"},
     {"videoId": "_oaA3LjsZE8", "title": "where love is served warm. / a playlist for quiet hours/", "addedAt": "2026-08-02T12:00:06Z"},
     {"videoId": "zvxZPRCGU9Q", "title": "a quiet chapter above the hills. / a playlist for quiet hours/", "addedAt": "2026-08-01T12:00:24Z"},
@@ -107,7 +107,6 @@
     {"videoId": "dtqVJHfXT5o", "title": "pouring a little peace. / a playlist for quiet hours/", "addedAt": "2026-07-28T12:00:14Z"},
     {"videoId": "2RTbbWCSxXw", "title": "where little steps find wonder... / a playlist for quiet hours/", "addedAt": "2026-07-26T12:00:23Z"},
     {"videoId": "tTZSV5ohtdg", "title": "home is this little moment. / a playlist for quiet hours/", "addedAt": "2026-07-25T12:00:32Z"},
-    {"videoId": "HitSvoSPOTQ", "title": "two cups above the valley. / a playlist for quiet hours/", "addedAt": "2026-07-24T12:00:03Z"},
     {"videoId": "J7aMA7ZuboY", "title": "where the mist meets the morning. / a playlist for quiet hours/", "addedAt": "2026-07-23T12:00:01Z"},
     {"videoId": "57g7SrMOQoE", "title": "the world feels softer here. / a playlist for quiet hours/", "addedAt": "2026-07-22T12:00:00Z"},
     {"videoId": "aLzVfGZb28k", "title": "a memory made of sunlight./ a playlist for quiet hours/", "addedAt": "2026-07-21T12:00:30Z"},
@@ -147,9 +146,7 @@
     {"videoId": "hTZh7KBUU_4", "title": "Peace tastes like tea. / a playlist for quiet hours/", "addedAt": "2026-06-01T12:00:14Z"},
     {"videoId": "t3huDq2aw74", "title": "Small moments, warm memories...   / a playlist for quiet hours/", "addedAt": "2026-05-30T12:00:05Z"},
     {"videoId": "ajXdi88E38s", "title": "Life feels quiet here...  / a playlist for quiet hours/", "addedAt": "2026-05-29T12:00:32Z"},
-    {"videoId": "BUfKR2MNWB4", "title": "Warm meals, quiet days.🍵/ a playlist for quiet hours/", "addedAt": "2026-05-25T12:00:22Z"},
     {"videoId": "12Thdu02w7M", "title": "Living slowly in the village. / a playlist for quiet hours/", "addedAt": "2026-05-23T12:00:27Z"},
-    {"videoId": "PosXTyHMhTo", "title": "“Brewing peace among the hills…” / a playlist for quiet hours/", "addedAt": "2026-05-21T12:00:19Z"},
     {"videoId": "bHWTBWOfRgk", "title": "“A calm day shared together.” / a playlist for quiet hours/", "addedAt": "2026-05-19T12:00:58Z"},
     {"videoId": "t3xmf0_5RCo", "title": "“Little moments together...” / a playlist for quiet hours/", "addedAt": "2026-05-18T12:01:32Z"},
     {"videoId": "9yTUqLlgv4M", "title": "“Slow coffee mornings...”/a playlist for quiet hours/", "addedAt": "2026-05-16T13:07:32Z"},
@@ -201,6 +198,9 @@
     {"videoId": "JQVG6thaJ48", "title": "Where The Air Is Soft, Stay A While.../a playlist for quiet hours/", "addedAt": "2025-10-10T12:00:39Z"},
     {"videoId": "mAqHvB-5bZA", "title": "your quiet love was too soft for their chaos.../a playlist for quiet hours/", "addedAt": "2025-09-17T12:01:37Z"},
     {"videoId": "vHSpMkBOl68", "title": "little breaths of peace in noisy hours.../a playlist to comfort your heart/", "addedAt": "2025-09-05T12:01:52Z"},
-    {"videoId": "C-6fc-gbtxU", "title": "the afternoon sky eases your mind.../a playlist for quiet hours/", "addedAt": "2025-08-27T12:00:16Z"}
+    {"videoId": "C-6fc-gbtxU", "title": "the afternoon sky eases your mind.../a playlist for quiet hours/", "addedAt": "2025-08-27T12:00:16Z"},
+    {"videoId": "SGgXZIgGX9g", "title": "let your heart rest while hands keep moving.../a playlist for quiet hours/", "addedAt": "2025-08-23T12:00:56Z"},
+    {"videoId": "EJvNxMm8yEA", "title": "small tasks carry away heavy thoughts.../a playlist for quiet hours/", "addedAt": "2025-08-22T12:00:33Z"},
+    {"videoId": "1wNqz_CGQJ8", "title": "listen to the quiet between the leaves.../a relaxing mood playlist/", "addedAt": "2025-08-20T12:00:07Z"}
   ]
 }
