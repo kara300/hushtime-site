@@ -2,6 +2,9 @@
   "schemaVersion": 2,
   "id": "UUa_-xIrGlrv67BN_zhiglpA",
   "items": [
+    {"videoId": "oPzvo2JHmqM", "title": "a softer place to land. /a playlist for quiet hours/", "addedAt": "2026-11-24T12:00:29Z"},
+    {"videoId": "xZ5--TY2EOM", "title": "small joys taste better here. / a playlist for quiet hours/", "addedAt": "2026-11-23T12:00:01Z"},
+    {"videoId": "iGgWCo5zeS0", "title": "the kind of day that stays. /a playlist for quiet hours/", "addedAt": "2026-11-22T12:00:03Z"},
     {"videoId": "43UYqcX1DTI", "title": "the day feels lighter here. /a playlist for quiet hours/", "addedAt": "2026-11-21T12:00:10Z"},
     {"videoId": "ga5pmJiewV8", "title": "far enough to feel free. /a playlist for quiet hours/", "addedAt": "2026-11-20T12:00:05Z"},
     {"videoId": "Tnsc-BLzR-s", "title": "a memory beneath the trees. / a playlist for quiet hours/", "addedAt": "2026-11-19T12:00:05Z"},
@@ -198,9 +201,6 @@
     {"videoId": "8r6Emtn12Yw", "title": "let your fears fall like autumn leaves.../a relaxing mood playlist/", "addedAt": "2025-08-13T12:00:15Z"},
     {"videoId": "jLjDDcLz2ek", "title": "quiet fields make the mind lighter.../a relaxing mood playlist/", "addedAt": "2025-08-12T12:01:34Z"},
     {"videoId": "cYCifRNaqbU", "title": "you bloom best under quiet skies... /a relaxing mood playlist/", "addedAt": "2025-08-08T12:01:16Z"},
-    {"videoId": "2ybWLxRbQAE", "title": "When everything feels too much, look for the green.../a relaxing mood playlist", "addedAt": "2025-07-24T12:00:05Z"},
-    {"videoId": "-NZSSfkjI-M", "title": "The quieter you become, the closer peace gets.../a playlist for quiet hours/", "addedAt": "2025-07-15T12:00:00Z"},
-    {"videoId": "bnMNHjIh3oo", "title": "The more you slow down, the closer peace gets.../a playlist for quiet hours/", "addedAt": "2025-07-14T12:01:06Z"},
-    {"videoId": "eXzXJ6TX8wE", "title": "In green quiet, breathe deep, feel safe.../a playlist for quiet hours/", "addedAt": "2025-07-13T12:01:00Z"}
+    {"videoId": "2ybWLxRbQAE", "title": "When everything feels too much, look for the green.../a relaxing mood playlist", "addedAt": "2025-07-24T12:00:05Z"}
   ]
 }
