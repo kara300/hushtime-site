@@ -2,6 +2,7 @@
   "schemaVersion": 2,
   "id": "UUVFPg11pCfshIs_0rH_sqGw",
   "items": [
+    {"videoId": "HbtH2SocKIY", "title": "[playlist ] 고요한 나날들", "addedAt": "2026-11-27T07:00:23Z"},
     {"videoId": "k2OzSQ-cJk8", "title": "[playlist ] 고요한 날과 여백 재즈", "addedAt": "2026-11-24T08:00:34Z"},
     {"videoId": "GF1JWrZbvx8", "title": "[playlist ] 대학로 플랜트 카페에서 흘러나오던 재즈", "addedAt": "2026-11-22T06:30:38Z"},
     {"videoId": "t1vqnX9nsSU", "title": "[playlist ] 지나가는 계절을 보는 너에게", "addedAt": "2026-11-19T06:30:37Z"},
@@ -200,7 +201,6 @@
     {"videoId": "3lE9DUEsiPk", "title": "[playlist] 고요한 오후, 서촌의 한 독립카페 ⎹ 가사없는 고요한 jazz", "addedAt": "2025-08-21T05:00:03Z"},
     {"videoId": "sH2LV3h7evg", "title": "[playlist] 이름모를 성수동 독립카페에서 흘러나오는 가사없는 고요한 jazz", "addedAt": "2025-08-19T05:01:02Z"},
     {"videoId": "msSa07XlKn4", "title": "[playlist] 지나가는 계절을 맞이하는 독립카페 직원의 시간 ⎹ 가사없는 고요한 jazz", "addedAt": "2025-08-17T05:00:58Z"},
-    {"videoId": "CkhGUirLXCo", "title": "[playlist] 독립카페 직원의 오후 ⎹ 가사없는 고요한 jazz", "addedAt": "2025-08-15T05:00:21Z"},
-    {"videoId": "yBYwo0OGCHg", "title": "[playlist] 비오는 독립카페를 지키는 직원의 시간 ⎹ 가사없는 고요한 jazz", "addedAt": "2025-08-13T02:25:00Z"}
+    {"videoId": "CkhGUirLXCo", "title": "[playlist] 독립카페 직원의 오후 ⎹ 가사없는 고요한 jazz", "addedAt": "2025-08-15T05:00:21Z"}
   ]
 }
